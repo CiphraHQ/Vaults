@@ -547,89 +547,6 @@ nav.scrolled .nav-container {
     line-height: 1.5;
 }
 
-/* Roadmap */
-.roadmap-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.roadmap-timeline {
-    position: relative;
-    padding-left: 2rem;
-}
-
-.roadmap-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0.75rem;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border-light);
-}
-
-.roadmap-item {
-    position: relative;
-    margin-bottom: 3rem;
-    background: white;
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow-sm);
-}
-
-.roadmap-item::before {
-    content: '';
-    position: absolute;
-    left: -1.25rem;
-    top: 2rem;
-    width: 12px;
-    height: 12px;
-    background: var(--primary-accent);
-    border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px var(--border-light);
-}
-
-.roadmap-item.completed::before {
-    background: var(--primary-accent);
-}
-
-.roadmap-item.current::before {
-    background: var(--primary-accent);
-    animation: pulse 2s infinite;
-}
-
-.roadmap-item.future::before {
-    background: var(--border-medium);
-}
-
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 3px white, 0 0 0 6px var(--border-light); }
-    50% { box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(5, 150, 105, 0.3); }
-    100% { box-shadow: 0 0 0 3px white, 0 0 0 6px var(--border-light); }
-}
-
-.roadmap-quarter {
-    font-size: 0.875rem;
-    color: var(--primary-accent);
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.roadmap-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
-}
-
-.roadmap-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
 /* Updates Form */
 .updates-form {
     max-width: 400px;
@@ -689,28 +606,114 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 2fr 3fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.footer-content h4 {
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.logo-icon-small {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-bars-small {
+    display: flex;
+    gap: 1px;
+    height: 16px;
+    align-items: flex-end;
+}
+
+.logo-bar-small {
+    width: 2px;
+    border-radius: 0.5px;
+    background: var(--primary-accent);
+}
+
+.logo-bar-small:nth-child(1) { height: 45%; }
+.logo-bar-small:nth-child(2) { height: 65%; }
+.logo-bar-small:nth-child(3) { height: 85%; }
+.logo-bar-small:nth-child(4) { height: 95%; }
+.logo-bar-small:nth-child(5) { height: 100%; }
+.logo-bar-small:nth-child(6) { height: 90%; }
+.logo-bar-small:nth-child(7) { height: 75%; }
+.logo-bar-small:nth-child(8) { height: 85%; }
+.logo-bar-small:nth-child(9) { height: 95%; }
+.logo-bar-small:nth-child(10) { height: 70%; }
+
+.footer-logo-text {
+    font-family: 'Orbitron', monospace;
     font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.footer-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 0.875rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.footer-content a {
+.footer-section a {
     color: var(--text-secondary);
     text-decoration: none;
     line-height: 2;
     display: block;
     transition: color 0.3s ease;
     cursor: pointer;
+    font-size: 0.875rem;
 }
 
-.footer-content a:hover {
+.footer-section a:hover {
     color: var(--primary-accent);
+}
+
+.coming-soon-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    line-height: 2;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+}
+
+.coming-soon-pill {
+    background: rgba(100, 116, 139, 0.1);
+    color: var(--text-muted);
+    padding: 0.125rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(100, 116, 139, 0.2);
 }
 
 .footer-bottom {
@@ -721,71 +724,6 @@ footer {
     text-align: center;
     color: var(--text-muted);
     font-size: 0.875rem;
-}
-
-/* Content Pages */
-.content-page {
-    padding: 8rem 2rem 4rem;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.content-page h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--text-primary);
-}
-
-.content-page h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin: 2rem 0 1rem;
-    color: var(--text-primary);
-}
-
-.content-page h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 1.5rem 0 0.75rem;
-    color: var(--text-primary);
-}
-
-.content-page p {
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-}
-
-.content-page ul {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    color: var(--text-secondary);
-}
-
-.content-page li {
-    margin-bottom: 0.5rem;
-    line-height: 1.6;
-}
-
-.coming-soon-badge {
-    display: inline-block;
-    background: rgba(239, 68, 68, 0.1);
-    color: #dc2626;
-    padding: 0.25rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-left: 0.5rem;
-}
-
-/* Page visibility */
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
 }
 
 /* Mobile Responsiveness */
@@ -825,17 +763,14 @@ footer {
         gap: 2rem;
     }
 
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
     .updates-form {
         flex-direction: column;
         margin: 2rem 1rem 0;
-    }
-
-    .roadmap-timeline {
-        padding-left: 1.5rem;
-    }
-
-    .roadmap-item {
-        padding: 1.5rem;
     }
 }
 

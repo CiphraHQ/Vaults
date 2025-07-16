@@ -1,40 +1,16 @@
-// Page navigation
-function showPage(pageId) {
-    // Hide all pages
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-    });
-    
-    // Show target page
-    document.getElementById(pageId).classList.add('active');
-    
-    // Scroll to top
+// Smooth scroll to top
+function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// Smooth scroll to section
 function scrollToSection(sectionId) {
-    // Make sure we're on the home page first
-    if (!document.getElementById('home').classList.contains('active')) {
-        showPage('home');
-        // Wait a bit for page to show, then scroll
-        setTimeout(() => {
-            const target = document.getElementById(sectionId);
-            if (target) {
-                const rect = target.getBoundingClientRect();
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const targetPosition = rect.top + scrollTop - 80;
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-            }
-        }, 100);
-    } else {
-        // Already on home page, just scroll
-        const target = document.getElementById(sectionId);
-        if (target) {
-            const rect = target.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const targetPosition = rect.top + scrollTop - 80;
-            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-        }
+    const target = document.getElementById(sectionId);
+    if (target) {
+        const rect = target.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetPosition = rect.top + scrollTop - 80;
+        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
     }
 }
 
