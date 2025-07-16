@@ -1,10 +1,48 @@
+// Page navigation
+function showPage(pageId) {
+    // Hide all pages
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Show target page
+    document.getElementById(pageId).classList.add('active');
+    
+    // Scroll to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToSection(sectionId) {
+    // Make sure we're on the home page first
+    if (!document.getElementById('home').classList.contains('active')) {
+        showPage('home');
+        // Wait a bit for page to show, then scroll
+        setTimeout(() => {
+            const target = document.getElementById(sectionId);
+            if (target) {
+                const rect = target.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const targetPosition = rect.top + scrollTop - 80;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+        }, 100);
+    } else {
+        // Already on home page, just scroll
+        const target = document.getElementById(sectionId);
+        if (target) {
+            const rect = target.getBoundingClientRect();
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const targetPosition = rect.top + scrollTop - 80;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    }
+}
+
 // Navigation scroll effects
 const navbar = document.getElementById('navbar');
-let lastScrollY = window.scrollY;
 
 function updateNavbar() {
     const scrollY = window.scrollY;
-    
     if (scrollY > 50) {
         navbar.classList.add('scrolled');
     } else {
@@ -13,27 +51,6 @@ function updateNavbar() {
 }
 
 window.addEventListener('scroll', updateNavbar, { passive: true });
-
-// Smooth scrolling for navigation links - FIXED VERSION
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-        
-        if (target) {
-            // Get the actual position of the target element
-            const rect = target.getBoundingClientRect();
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const targetPosition = rect.top + scrollTop - 80; // 80px offset for navbar
-            
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
 
 // Updates form handling
 document.addEventListener('DOMContentLoaded', function() {
@@ -44,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const button = this.querySelector('button');
             const originalText = button.textContent;
             
-            button.textContent = 'Subscribed ✓';
+            button.textContent = 'Added to Waitlist ✓';
             button.style.background = 'var(--primary-accent)';
             button.style.transform = 'scale(1.05)';
             
@@ -68,7 +85,7 @@ function initVaultsDemo() {
         {
             id: 1,
             type: 'system',
-            content: "Welcome to the Vaults demo! This simulates local AI processing. Try asking me about document analysis or privacy features.",
+            content: "Welcome to the Vaults demo! This simulates local AI processing. Try asking me about privacy features or document analysis.",
             timestamp: new Date().toLocaleTimeString(),
         }
     ];
@@ -123,8 +140,8 @@ function initVaultsDemo() {
                             <div style="width: 4px; height: 4px; background: #10b981; border-radius: 50%;"></div>
                             Demo Mode Active
                         </div>
-                        <div style="font-size: 10px; color: #6b7280; display: flex; align-items: center; gap: 4px;">
-                            Simulated Encryption
+                        <div style="font-size: 10px; color: #6b7280;">
+                            Simulated Local Processing
                         </div>
                     </div>
                 </div>
@@ -156,7 +173,7 @@ function initVaultsDemo() {
                                 }; border: ${m.type === 'system' || m.type === 'ai' ? '1px solid #e5e7eb' : 'none'};">
                                     <div style="font-size: 13px; line-height: 1.4;">${m.content}</div>
                                     <div style="font-size: 10px; margin-top: 4px; opacity: 0.7;">
-                                        ${m.timestamp}${m.type === 'ai' ? ' • Demo AI' : ''}
+                                        ${m.timestamp}${m.type === 'ai' ? ' • Local AI' : ''}
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +227,7 @@ function initVaultsDemo() {
                         ${docs.map(doc => `
                             <div style="display: flex; justify-content: space-between; align-items: center; background: white; border: 1px solid #e5e7eb; padding: 12px; border-radius: 8px; margin-bottom: 8px;">
                                 <div style="display: flex; align-items: center; gap: 12px;">
-                                    <div style="background: #dcfce7; padding: 6px; border-radius: 6px; font-size: 12px;">DOC</div>
+                                    <div style="background: #dcfce7; padding: 6px; border-radius: 6px; font-size: 12px; font-weight: 600;">DOC</div>
                                     <div>
                                         <div style="font-weight: 600; font-size: 13px;">${doc.name}</div>
                                         <div style="font-size: 11px; color: #6b7280;">${doc.size} • ${doc.date}</div>
@@ -240,7 +257,7 @@ function initVaultsDemo() {
                         <div style="background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px;">
                             <h3 style="font-size: 14px; font-weight: 600; margin-bottom: 12px;">New Recording</h3>
                             <div style="text-center; padding: 24px 0;">
-                                <button style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #d1d5db; background: white; cursor: pointer; font-size: 18px;">
+                                <button style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #d1d5db; background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 18px; margin: 0 auto;">
                                     🎙️
                                 </button>
                                 <p style="margin-top: 8px; font-size: 12px; color: #6b7280;">Tap to start recording</p>
@@ -330,7 +347,7 @@ function initVaultsDemo() {
             "This demo simulates how I'll analyze your documents privately. Everything stays on your device - no cloud processing ever.",
             "I can help with legal document review, medical record analysis, or journalistic research - all processed locally for complete confidentiality.",
             "Your query shows how Vaults will work: ask questions, get AI insights, maintain absolute privacy. No data transmission, ever.",
-            "This demonstrates local AI processing. The real product will use models like Llama-2 running entirely on your hardware."
+            "This demonstrates local AI processing. The real product will use models running entirely on your hardware."
         ];
         
         messages.push({
