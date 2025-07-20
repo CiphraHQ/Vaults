@@ -1,270 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaults - Secure Offline Workspace for Professionals</title>
-    <meta name="description" content="Vaults is a privacy-first workspace that processes everything locally. Enterprise-grade security without cloud dependency. Coming 2025.">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaults – Secure Offline Workspace for Professionals</title>
+  <meta name="description" content="Vaults is an air‑gapped, offline-first workspace built for legal, compliance, and investigative professionals. Your data stays private—always.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo-container" onclick="scrollToTop()">
-                <div class="logo-icon">
-                    <div class="logo-bars">
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                        <div class="logo-bar"></div>
-                    </div>
-                </div>
-                <div class="logo-text">VAULTS</div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#how-it-works" onclick="scrollToSection('how-it-works')">How It Works</a></li>
-                <li><a href="#features" onclick="scrollToSection('features')">Features</a></li>
-                <li><a href="#demo" onclick="scrollToSection('demo')">Demo</a></li>
-                <li><a href="#waitlist" onclick="scrollToSection('waitlist')">Join Waitlist</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-badge">In Development • Coming 2025</div>
-            <h1>
-                Professional Workspace Without <span class="hero-highlight">Cloud Risk</span>
-            </h1>
-            <p>
-                Vaults is the secure offline workspace for professionals handling sensitive data. 
-                Complete local processing means your information never leaves your device—ensuring enterprise-grade security without cloud dependency.
-            </p>
-            <div class="cta-group">
-                <a href="#demo" onclick="scrollToSection('demo')" class="cta-primary">Try Demo</a>
-                <a href="#waitlist" onclick="scrollToSection('waitlist')" class="cta-secondary">Join Waitlist</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="how-it-works">
-        <div class="section-header">
-            <h2>Built for Maximum Security</h2>
-            <p>
-                Traditional productivity tools require cloud connectivity, creating unacceptable exposure for sensitive professional work.
-            </p>
-        </div>
-        
-        <div class="how-it-works">
-            <div class="problem-solution">
-                <div class="problem">
-                    <h3>Cloud Exposure Risk</h3>
-                    <p>Standard productivity tools upload data to external servers, exposing organizations to breaches, unauthorized access, and compliance violations.</p>
-                </div>
-                
-                <div class="solution">
-                    <h3>Complete Local Processing</h3>
-                    <p>Vaults operates entirely offline. All processing, encryption, and storage happens on your device—eliminating cloud vulnerabilities completely.</p>
-                </div>
-            </div>
-            
-            <div class="architecture-visual">
-                <div class="arch-layer">
-                    <strong>Professional Interface</strong>
-                    Secure workspace for sensitive documents
-                </div>
-                <div class="arch-layer">
-                    <strong>Processing Engine</strong>
-                    Templates, search, and editing—fully offline
-                </div>
-                <div class="arch-layer">
-                    <strong>Security Layer</strong>
-                    AES-256 encryption with LibSodium
-                </div>
-                <div class="arch-layer">
-                    <strong>Local Storage</strong>
-                    Device-only storage—no external servers
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-alt">
-        <section class="section" id="features">
-            <div class="section-header">
-                <h2>Enterprise Security Without Compromise</h2>
-                <p>
-                    Designed for professionals who require absolute data security without sacrificing functionality.
-                </p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">SEC</div>
-                    <h3>Air-Gap Compatible</h3>
-                    <p>Manual license files and complete offline operation. Compatible with high-security environments where internet access is prohibited. Full functionality without network requirements.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">DOC</div>
-                    <h3>Professional Tools</h3>
-                    <p>Comprehensive document workspace with templates for legal, compliance, and sensitive work. Advanced search, organization, and secure export capabilities—all processed locally.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">CTRL</div>
-                    <h3>Total Data Control</h3>
-                    <p>You maintain complete control over updates, backups, and licensing. Expired licenses activate read-only mode—your data remains accessible but protected from modifications.</p>
-                </div>
-            </div>
-        </section>
+  <header class="hero">
+    <h1>Work Offline. Stay Secure.</h1>
+    <p>Vaults is an encrypted workspace that keeps everything local—built for professionals who need absolute data privacy without compromise.</p>
+    <div class="cta-group">
+      <a href="#demo" class="cta-primary">Explore the Demo</a>
+      <a href="#waitlist" class="cta-secondary">Get Early Access</a>
     </div>
+  </header>
 
-    <section class="section" id="demo">
-        <div class="section-header">
-            <h2>Experience Vaults</h2>
-            <p>
-                Interactive demonstration of offline-first architecture and enterprise security features.
-            </p>
-        </div>
-
-        <div class="demo-container">
-            <div class="demo-description">
-                <h3>Demo Features</h3>
-                <p style="margin-bottom: 2rem; color: var(--text-muted);">This simulation demonstrates core Vaults functionality:</p>
-                
-                <div class="demo-features">
-                    <div class="demo-feature">
-                        <div class="demo-feature-icon">WORK</div>
-                        <div>
-                            <h4>Secure Workspace</h4>
-                            <p>Professional templates and organization tools for sensitive work.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="demo-feature">
-                        <div class="demo-feature-icon">DOCS</div>
-                        <div>
-                            <h4>Encrypted Storage</h4>
-                            <p>Local file management with AES-256 encryption.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="demo-feature">
-                        <div class="demo-feature-icon">LIC</div>
-                        <div>
-                            <h4>Manual Licensing</h4>
-                            <p>Offline license management for maximum security.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="demo-feature">
-                        <div class="demo-feature-icon">OFF</div>
-                        <div>
-                            <h4>Offline Operation</h4>
-                            <p>Full functionality without internet connectivity.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="demo-note">
-                <strong>Demo Notice:</strong> This simulation demonstrates offline workflows and security features. 
-                The production version includes full AES-256 encryption and complete offline architecture.
-            </div>
-            
-            <div id="vaults-demo-container"></div>
-        </div>
-    </section>
-
-    <div class="section-alt">
-        <section class="section" id="waitlist">
-            <div class="section-header">
-                <h2>Priority Access</h2>
-                <p>
-                    Join professionals securing early access to Vaults. Receive development updates and priority launch access.
-                </p>
-            </div>
-            
-            <div class="updates-form" id="updatesForm">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Join Waitlist</button>
-            </div>
-            
-            <div style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.875rem; text-align: center;">
-                <p>Development updates only. Unsubscribe anytime.</p>
-            </div>
-        </section>
+  <section id="how-it-works">
+    <h2>Why Professionals Choose Vaults</h2>
+    <p>Most cloud tools create compliance risk. Vaults never connects to the internet—your data stays local, always encrypted.</p>
+    <div class="problem-solution">
+      <div class="problem">
+        <h3>The Cloud Risk</h3>
+        <p>Cloud apps can expose confidential files to breaches, subpoenas, or unauthorized access.</p>
+      </div>
+      <div class="solution">
+        <h3>Offline‑First Security</h3>
+        <p>Vaults processes, encrypts, and stores data entirely on your device—never online.</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <div class="logo-icon-small">
-                        <div class="logo-bars-small">
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                            <div class="logo-bar-small"></div>
-                        </div>
-                        <div class="footer-logo-text">VAULTS</div>
-                    </div>
-                </div>
-                <p class="footer-description">Secure offline workspace for professionals.</p>
-                <p class="footer-ciphra">A <a href="#" class="ciphra-link">Ciphra</a> product</p>
-            </div>
-            
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="#how-it-works" onclick="scrollToSection('how-it-works')">How It Works</a>
-                    <a href="#features" onclick="scrollToSection('features')">Features</a>
-                    <a href="#demo" onclick="scrollToSection('demo')">Demo</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Security</h4>
-                    <a href="#" class="coming-soon-link">
-                        Architecture <span class="coming-soon-pill">Coming Soon</span>
-                    </a>
-                    <a href="#" class="coming-soon-link">
-                        Compliance <span class="coming-soon-pill">Coming Soon</span>
-                    </a>
-                    <a href="#" class="coming-soon-link">
-                        Audits <span class="coming-soon-pill">Coming Soon</span>
-                    </a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="#waitlist" onclick="scrollToSection('waitlist')">Join Waitlist</a>
-                    <a href="#" class="coming-soon-link">
-                        Roadmap <span class="coming-soon-pill">Coming Soon</span>
-                    </a>
-                    <a href="#" class="ciphra-link">About Ciphra</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Vaults. Professional workspace for sensitive data.</p>
-        </div>
-    </footer>
+  <section id="features">
+    <h2>Features for Compliance and Control</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Air‑Gap Security</h3>
+        <p>Nothing leaves your device. Updates and licensing are manual to ensure an air‑gapped environment.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Professional Document Tools</h3>
+        <p>Templates, tagging, encrypted search, and export—all offline for legal, compliance, and investigative work.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Complete Data Control</h3>
+        <p>Manual updates, license import, and read‑only mode on expiry—your data is never blocked or removed.</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <section id="demo">
+    <h2>See Vaults in Action</h2>
+    <p>Explore how Vaults keeps your workspace private, offline, and secure.</p>
+    <div class="demo-features">
+      <div class="demo-feature">
+        <h4>Encrypted Workspace</h4>
+        <p>Organize confidential documents in a local, air‑gapped environment.</p>
+      </div>
+      <div class="demo-feature">
+        <h4>Local‑Only Storage</h4>
+        <p>Files and metadata remain on your device, secured by AES‑256 encryption.</p>
+      </div>
+      <div class="demo-feature">
+        <h4>Manual Licensing</h4>
+        <p>Import signed license files offline, with no background connections.</p>
+      </div>
+      <div class="demo-feature">
+        <h4>Zero Background Connections</h4>
+        <p>Vaults never transmits data—even updates and activation remain offline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="waitlist">
+    <h2>Stay Updated</h2>
+    <p>Join the waitlist for early access to Vaults and product updates.</p>
+    <form class="updates-form">
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Get Early Access</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>Vaults by Ciphra – built for professionals who demand offline-first security and complete control over their data.</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
